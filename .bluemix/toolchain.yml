@@ -26,11 +26,11 @@ template:
     - sample-repo
   info:
     git url: >-
-      [https://github.com/open-toolchain/simple-toolchain](https://github.com/open-toolchain/simple-toolchain)
+      [https://github.com/palistra/simple-order-toolchain](https://github.com/palistra/simple-order-toolchain/)
     git branch: >-
-      [master](https://github.com/open-toolchain/simple-toolchain/tree/master)
+      [master](https://github.com/palistra/simple-order-toolchain/tree/master)
 toolchain:
-  name: 'simple-toolchain-{{timestamp}}'
+  name: 'simple-order-toolchain-{{timestamp}}'
   template:
     getting_started: |-
       **Your toolchain is ready!**
@@ -41,8 +41,8 @@ services:
   sample-repo:
     service_id: githubpublic
     parameters:
-      repo_name: '{{toolchain.name}}'
-      repo_url: 'https://github.com/open-toolchain/node-hello-world'
+      repo_name: 'orders-api-toolchain-demo-{{timestamp}}'
+      repo_url: 'https://github.com/open-toolchain/Microservices_OrdersAPI'
       type: clone
       has_issues: true
   sample-build:
@@ -50,7 +50,7 @@ services:
     parameters:
       services:
         - sample-repo
-      name: '{{toolchain.name}}'
+      name: 'orders-api-toolchain-demo-{{timestamp}}'
       ui-pipeline: true
       configuration:
         content:
