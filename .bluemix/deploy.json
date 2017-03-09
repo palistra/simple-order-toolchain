@@ -8,7 +8,23 @@
     "longDescription": "The Delivery Pipeline automates continuous deployment.",
     "type": "object",
     "properties": {
-        "prod-region": {
+        "dev-region": {
+            "description": "The bluemix dev region",
+            "type": "string"
+        },
+        "dev-organization": {
+            "description": "The bluemix dev org",
+            "type": "string"
+        },
+       "dev-space": {
+            "description": "The bluemix dev space",
+            "type": "string"
+        },
+       "dev-app-name": {
+            "description": "The name of your dev Hello World app",
+            "type": "string"
+        }
+         "prod-region": {
             "description": "The bluemix region",
             "type": "string"
         },
@@ -23,9 +39,9 @@
        "prod-app-name": {
             "description": "The name of your Hello World app",
             "type": "string"
-        }
+        }        
     },
-    "required": ["prod-region", "prod-organization", "prod-space", "prod-app-name"],
+    "required": ["dev-region", "dev-organization", "dev-space", "dev-app-name", "prod-region", "prod-organization", "prod-space", "prod-app-name"],
     "form": [
        {
           "type": "validator",
@@ -58,6 +74,23 @@
                   "type": "label",
                   "title": "Space"
                 },
+                {
+                  "type": "label",
+                  "title": "Dev stage"
+                },
+                {
+                  "type": "select",
+                  "key": "dev-region"
+                },
+                {
+                  "type": "select",
+                  "key": "dev-organization"
+                },
+                {
+                  "type": "select",
+                  "key": "dev-space",
+                  "readonly": false
+                }
                 {
                   "type": "label",
                   "title": "Production stage"
