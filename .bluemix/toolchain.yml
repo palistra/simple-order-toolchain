@@ -58,7 +58,7 @@ services:
         env:
           SAMPLE_REPO: sample-repo
           CF_APP_NAME: '{{form.pipeline.parameters.prod-app-name}}'          
-          PROD_SPACE_NAME: '{{form.pipeline.parameters.prod-space}}'
+          PROD_SPACE_NAME: 'prod'
           PROD_ORG_NAME: '{{form.pipeline.parameters.prod-organization}}'
           PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
         execute: true
