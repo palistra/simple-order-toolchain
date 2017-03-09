@@ -23,7 +23,7 @@
        "dev-app-name": {
             "description": "The name of your dev Hello World app",
             "type": "string"
-        }
+        },
          "prod-region": {
             "description": "The bluemix region",
             "type": "string"
