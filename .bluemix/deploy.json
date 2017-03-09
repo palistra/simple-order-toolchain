@@ -90,7 +90,7 @@
                   "type": "select",
                   "key": "dev-space",
                   "readonly": false
-                }
+                },
                 {
                   "type": "label",
                   "title": "Production stage"
