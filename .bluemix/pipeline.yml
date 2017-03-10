@@ -34,7 +34,11 @@ stages:
       application: ${CF_APP_NAME}
     script: |
       #!/bin/bash
+      # Create 
+      echo "Attempting to create cloudantNoSQLDB Lite myMicroservicesCloudant for use by the microservices. Ii is not a problem if it already exists, we simply continue."
+      cf create-service cloudantNoSQLDB Lite myMicroservicesCloudant
       # Push app
+      echo "If the $CF_APP does not exist, push the app."
       if ! cf app $CF_APP; then  
         cf push $CF_APP
       else
@@ -50,8 +54,11 @@ stages:
         }
         set -e
         trap rollback ERR
+        echo "If the $CF_APP does exist, rename it."
         cf rename $CF_APP $OLD_CF_APP
+        echo "And push out the new version."
         cf push $CF_APP
+        echo "If the push is successful, delete the old app."
         cf delete $OLD_CF_APP -f
       fi
       # Export app name and URL for use in later Pipeline jobs
