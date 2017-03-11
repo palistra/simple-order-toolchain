@@ -34,7 +34,7 @@ stages:
       application: ${CF_APP_NAME}
     script: |
       #!/bin/bash
-      echo "Attempting to create cloudantNoSQLDB Lite myMicroservicesCloudant for use by the microservices. Ii is not a problem if it already exists, we simply continue."
+      echo "Attempting to create cloudantNoSQLDB Lite myMicroservicesCloudant for use by the microservices. It is not a problem if it already exists, we simply continue."
       cf create-service cloudantNoSQLDB Lite myMicroservicesCloudant
       # Push app
       echo "If the $CF_APP does not exist, push the app."
